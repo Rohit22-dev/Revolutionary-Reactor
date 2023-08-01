@@ -3,8 +3,8 @@
 import { useContext, useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
 import { AllProduct } from "./Data";
-import { UserContext } from "@/app/page";
 import Loader from "./Loader";
+import { UserContext } from "./UserContext";
 
 const Products = () => {
   const [allProducts, setAllProducts] = useState([]);

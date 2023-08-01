@@ -15,8 +15,8 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import ModeToggle from "./ModeToggle";
-import { UserContext } from "@/app/page";
 import Image from "next/image";
+import { UserContext } from "./UserContext";
 
 const components: { title: string; href: string; description: string }[] = [
   {
