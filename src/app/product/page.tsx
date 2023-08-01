@@ -2,11 +2,11 @@
 import { ProductDetail } from "@/components/Data";
 import { useSearchParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
-import ReactStars from "react-rating-stars-component";
 import Navbar from "../../components/Navbar";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Loader from "@/components/Loader";
+import ReactStars from "react-rating-star-with-type";
 
 interface ProductData {
   id: number;
@@ -36,8 +36,8 @@ const Page = () => {
     <div className="w-screen h-screen flex flex-col">
       <Navbar />
       {product ? (
-        <div className="flex p-6 bg-muted m-4 rounded-lg gap-6 h-2/3 mt-10">
-          <div className=" w-1/2 h-full relative">
+        <div className="flex flex-col md:flex-row p-6 bg-muted m-4 rounded-lg gap-6 h-2/3 mt-10">
+          <div className="w-full md:w-1/2 h-full relative">
             <Image
               alt="image"
               src={product?.image}
@@ -46,7 +46,7 @@ const Page = () => {
               priority
             />
           </div>
-          <div className="flex flex-col w-1/2">
+          <div className="flex flex-col w-full md:w-1/2">
             <h1 className="text-xl font-bold">{product?.title}</h1>
             <p className="text-sm leading-4 text-gray-300 mt-2">
               {product?.description}
@@ -56,14 +56,10 @@ const Page = () => {
               <span className=" text-green-700 font-bold">$&nbsp;</span>
               {product?.price}
             </section>
-            <ReactStars
-              count={5}
-              size={24}
-              activeColor="#06aa08"
-              value={temp}
-              edit={false}
-            />
-            <p className="text-sm">({product?.rating.count})</p>
+            <div className="flex items-center">
+              <ReactStars  size={20} value={temp} activeColor="#06aa08" isEdit={false} />
+              <p className="text-sm">({product?.rating.count})</p>
+            </div>
             <div className="flex gap-4 mt-6">
               <Button
                 variant="outline"
@@ -81,7 +77,7 @@ const Page = () => {
           </div>
         </div>
       ) : (
-        <Loader/>
+        <Loader />
       )}
     </div>
   );

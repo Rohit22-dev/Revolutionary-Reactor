@@ -3,6 +3,7 @@
 type AllProductProps = {
   category?: string | null;
   id?: string | null;
+  sort?:boolean
 };
 
 export const AllProduct = async ({ category }: AllProductProps) => {

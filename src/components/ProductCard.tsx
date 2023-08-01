@@ -1,5 +1,5 @@
 import React from "react";
-import ReactStars from "react-rating-stars-component";
+import ReactStars from "react-rating-star-with-type";
 import { Button } from "./ui/button";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -49,14 +49,8 @@ const ProductCard: React.FC<ProductCardProps> = ({ data }) => {
         </section>
       </div>
       <p className="text-xs">{data.category}</p>
-      <div className="flex items-center">
-        <ReactStars
-          count={5}
-          size={16}
-          activeColor="#06aa08"
-          value={temp}
-          edit={false}
-        />
+      <div className="flex items-center py-2">
+        <ReactStars value={temp} activeColor="#06aa08" isEdit={false} />
         <p className="text-xs">({data.rating.count})</p>
       </div>
       <Button

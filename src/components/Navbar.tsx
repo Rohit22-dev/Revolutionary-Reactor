@@ -51,10 +51,10 @@ export default function NavigationMenuDemo() {
   const handleSearch = () => {};
 
   return (
-    <div className="justify-around flex py-2 items-center">
+    <div className="justify-around flex flex-col md:flex-row py-2 items-center">
       <div className="flex items-center gap-4">
         <Image alt="logo" src={logo} width={32} />
-        <h1>Reactor</h1>
+        <h1 className="text-xl font-semibold ">Reactor</h1>
       </div>
       <NavigationMenu>
         <NavigationMenuList>
