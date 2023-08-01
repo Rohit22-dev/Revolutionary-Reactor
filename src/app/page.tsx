@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 import Products from "@/components/Products";
 import Navbar from "../components/Navbar";
 

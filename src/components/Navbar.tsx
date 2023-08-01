@@ -2,9 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-
 import { cn } from "@/lib/utils";
-import { Icons } from "@/components/Icons";
 import logo from "../../public/cart.png";
 import { Search, ShoppingCart } from "lucide-react";
 import {

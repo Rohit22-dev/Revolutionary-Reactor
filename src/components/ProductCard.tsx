@@ -31,7 +31,13 @@ const ProductCard: React.FC<ProductCardProps> = ({ data }) => {
         href={{ pathname: "/product", query: { id: data.id.toString() } }}
         className="w-full h-80 relative"
       >
-        <Image alt="image" src={data.image} layout="fill" objectFit="contain" />
+        <Image
+          alt="image"
+          src={data.image}
+          layout="fill"
+          objectFit="contain"
+          loading="lazy"
+        />
       </Link>
       <div className="flex text-sm font-semibold gap-2 mt-2">
         <h1 className="w-4/5 line-clamp-1">{data.title}</h1>
